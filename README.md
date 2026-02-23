@@ -50,4 +50,45 @@ rule based on Sysmon event ID 1, that detects every process of creation. If that
 be turned on it would create a whole lot of false positives, so it must be custom rule to detect
 creation of kerbrute.exe process only.
 
+_My custom rule_
 
+![Custom Rule](screenshots/custom-rule-ker.png)
+
+Here is a crafted rule, has severity level of 15 that is critical, sid points to Sysmon event ID 1, that
+is if Sysmon rule triggered, my rule fires instead, it looks for kerbrute.exe process and the (?i) part sets
+case sensitivity because attackers can execute KERBRUTE.EXE or KerBrute.exe etc. And finally, it
+indicates to id of MITRE technique that was use
+
+Both execution with powershell and command prompt were tested, they work the same.
+
+_Execution_
+
+![execution](screenshots/execution.png)
+
+_Alert_
+
+![execution](screenshots/alert-kerbrute.png)
+
+
+The alert in detail shows commandLine, hashes and location of kerbrute.exe as well as other stuff.
+
+_Logs_
+
+![execution](screenshots/log-kerbrute.png)
+
+
+![execution](screenshots/log2-kerbrute.png)
+
+### What I Learned
+
+• Improved understanding of Windows Event Logs
+
+• Practical experience with detection rule tuning
+
+• Log correlation in SIEM environment
+
+• Importance of reducing false positives
+
+## Full Report
+
+Full report with 10 different attack scenarious available in **report.pdf**
