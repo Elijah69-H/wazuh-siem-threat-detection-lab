@@ -67,6 +67,8 @@ _Execution_
 
 _Alert_
 
+This screenshot shows a Wazuh alert triggered by the custom rule matching `Kerbrute.exe` process creation (Sysmon Event ID 1).
+
 ![execution](screenshots/alert-kerbrute.png)
 
 
